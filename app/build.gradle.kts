@@ -6,21 +6,21 @@ plugins {
 
 android {
     namespace = "de.dojodev.mybiblenotes"
-    compileSdk = 34
+    compileSdk = rootProject.extra["sdk_compile"] as Int
 
     defaultConfig {
         applicationId = "de.dojodev.mybiblenotes"
-        minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        minSdk = rootProject.extra["sdk_min"] as Int
+        targetSdk = rootProject.extra["sdk_compile"] as Int
+        versionCode = rootProject.extra["version"] as Int
+        versionName = rootProject.extra["version_name"] as String
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = rootProject.extra["minify"] as Boolean
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -28,14 +28,17 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = rootProject.extra["java_jvm"] as JavaVersion
+        targetCompatibility = rootProject.extra["java_jvm"] as JavaVersion
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = rootProject.extra["java_version"] as String
     }
     buildFeatures {
         compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = rootProject.extra["compose_version"] as String
     }
 }
 

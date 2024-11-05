@@ -21,3 +21,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "MyBibleNotes"
 include(":app")
+include(":BibleApi")
+include(":Database")
+include(":Data")
