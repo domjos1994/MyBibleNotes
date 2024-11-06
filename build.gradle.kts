@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.kotlin.compose) apply false
     alias(libs.plugins.android.library) apply false
     alias(libs.plugins.serialization.core) apply false
+    alias(libs.plugins.kapt.library) apply false
 }
 
 buildscript {

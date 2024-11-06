@@ -13,6 +13,8 @@ material = "1.12.0"
 okhttp = "4.12.0"
 serialization = "2.0.20"
 serialization-json = "1.7.3"
+room = "2.6.1"
+kapt = "2.0.10-1.0.24"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -41,11 +43,19 @@ okhttp-mock = { group = "com.squareup.okhttp3", name = "mockwebserver" }
 # serialization
 serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serialization-json"}
 
+# room
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-pagination = { group = "androidx.room", name = "room-paging", version.ref = "room" }
+room-testing = { group = "androidx.room", name = "room-testing", version.ref = "room"}
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
+kapt-library = { id = "com.google.devtools.ksp", version.ref = "kapt" }
 # serialization
 serialization-core = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref="serialization" }
 
