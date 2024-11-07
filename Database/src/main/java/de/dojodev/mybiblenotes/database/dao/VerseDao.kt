@@ -13,6 +13,9 @@ interface VerseDao {
     @Query("SELECT * FROM verses WHERE bibleId=:bibleId AND bookId=:bookId and chapterId=:chapterId")
     fun getAll(bibleId: String, bookId: String, chapterId: String): Flow<List<Verse>>
 
+    @Query("SELECT count(id) FROM verses WHERE id=:id")
+    fun count(id: String): Long
+
     @Insert
     fun insertVerse(verse: Verse)
 

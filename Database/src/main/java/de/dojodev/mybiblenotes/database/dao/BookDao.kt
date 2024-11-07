@@ -14,6 +14,9 @@ interface BookDao {
     @Query("SELECT * FROM books WHERE bibleId=:bibleId")
     fun getAll(bibleId: String): Flow<List<Book>>
 
+    @Query("SELECT count(id) FROM books WHERE id=:id")
+    fun count(id: String): Long
+
     @Insert
     fun insertBook(book: Book)
 

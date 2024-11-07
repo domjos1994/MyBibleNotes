@@ -13,6 +13,9 @@ interface SectionDao {
     @Query("SELECT * FROM sections WHERE bibleId=:bibleId AND bookId=:bookId AND chapterId=:chapterId")
     fun getAll(bibleId: String, bookId: String, chapterId: String): Flow<List<Section>>
 
+    @Query("SELECT count(id) FROM sections WHERE id=:id")
+    fun count(id: String): Long
+
     @Insert
     fun insertSection(section: Section)
 

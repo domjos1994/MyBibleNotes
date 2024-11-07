@@ -21,6 +21,9 @@ interface BibleDao {
     @Query("SELECT * FROM bibles WHERE mediaType='${MediaTypeConverter.AUDIO_BOOK}'")
     fun getAllAudioBooks(): Flow<List<Bible>>
 
+    @Query("SELECT count(id) FROM bibles WHERE id=:id")
+    fun count(id: String): Long
+
     @Insert
     fun insertBible(bible: Bible)
 

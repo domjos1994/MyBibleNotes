@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kapt.library)
+    alias(libs.plugins.hilt.library)
 }
 
 android {
@@ -50,6 +51,10 @@ dependencies {
     implementation(libs.room.pagination)
     annotationProcessor(libs.room.compiler)
     ksp(libs.room.compiler)
+
+    // hilt
+    ksp(libs.hilt.android.compiler)
+    implementation(libs.hilt.android)
 
     // testing dependencies
     testImplementation(libs.junit)

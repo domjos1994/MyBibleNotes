@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.android.library) apply false
     alias(libs.plugins.serialization.core) apply false
     alias(libs.plugins.kapt.library) apply false
+    alias(libs.plugins.hilt.library) apply false
 }
 
 buildscript {

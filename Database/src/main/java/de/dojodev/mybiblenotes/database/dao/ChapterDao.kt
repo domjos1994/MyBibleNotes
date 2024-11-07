@@ -14,6 +14,9 @@ interface ChapterDao {
     @Query("SELECT * FROM chapters WHERE bibleId=:bibleId AND bookId=:bookId")
     fun getAll(bibleId: String, bookId: String): Flow<List<Chapter>>
 
+    @Query("SELECT count(id) FROM chapters WHERE id=:id")
+    fun count(id: String): Long
+
     @Insert
     fun insertChapter(chapter: Chapter)
 

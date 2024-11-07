@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kapt.library)
+    alias(libs.plugins.hilt.library)
 }
 
 android {
@@ -33,10 +35,20 @@ android {
 }
 
 dependencies {
+    // projects
+    implementation(project(":BibleApi"))
+    implementation(project(":Database"))
 
+    // hilt
+    ksp(libs.hilt.android.compiler)
+    implementation(libs.hilt.android)
+
+    // core
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
+
+    // testing dependencies
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

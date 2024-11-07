@@ -13,6 +13,9 @@ interface PassageDao {
     @Query("SELECT * FROM passages WHERE bibleId=:bibleId and chapterId=:chapterId")
     fun getAll(bibleId: String, chapterId: String): Flow<List<Passage>>
 
+    @Query("SELECT count(id) FROM passages WHERE id=:id")
+    fun count(id: String): Long
+
     @Insert
     fun insertPassage(passage: Passage)
 

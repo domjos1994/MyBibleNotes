@@ -15,6 +15,8 @@ serialization = "2.0.20"
 serialization-json = "1.7.3"
 room = "2.6.1"
 kapt = "2.0.10-1.0.24"
+hilt = "2.51"
+hilt-compose = "1.2.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -50,6 +52,11 @@ room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 room-pagination = { group = "androidx.room", name = "room-paging", version.ref = "room" }
 room-testing = { group = "androidx.room", name = "room-testing", version.ref = "room"}
 
+# hilt
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hilt-compose" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
@@ -58,4 +65,4 @@ android-library = { id = "com.android.library", version.ref = "agp" }
 kapt-library = { id = "com.google.devtools.ksp", version.ref = "kapt" }
 # serialization
 serialization-core = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref="serialization" }
-
+hilt-library = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
