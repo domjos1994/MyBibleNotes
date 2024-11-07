@@ -11,8 +11,11 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/BibleApi" />
+            <option value="$PROJECT_DIR$/ComposeComponents" />
             <option value="$PROJECT_DIR$/Data" />
             <option value="$PROJECT_DIR$/Database" />
+            <option value="$PROJECT_DIR$/FeatureBible" />
+            <option value="$PROJECT_DIR$/FeatureNote" />
             <option value="$PROJECT_DIR$/app" />
           </set>
         </option>
